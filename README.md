@@ -1,10 +1,20 @@
-# Horizon-Project SWE Spring 2025
-Pizza Order and Delivery System
+# Horizon-Software Company SWE Group 9
 
-This project aims to design a Pizza Order and Delivery System for a small pizza shop that offers pickup and delivery services. The system will help manage customer information, take orders, process payments, and generate receipts. It will also provide a menu with customizable pizza options. 
+Restaurant Management System
+#Overview
+The Restaurant Management System is a touchscreen-based desktop application designed to streamline restaurant operations. The system allows staff members—Hosts, Waiters, Cooks, Busboys, and Managers—to efficiently manage tasks such as taking orders, tracking table statuses, and monitoring restaurant operations. It features a role-based login system and personalized home screens for each staff member, ensuring an efficient and organized working environment.
 
-Technologies Used:                                                                                                                                                                   IntelliJ Idea, JavaFX, Java Programming Language, JUnit
+#The project will be split into two sprints: 
+Sprint 1: 
+Focus on user login, role-based access, table status, and order management. 
+Sprint 2: 
+Add employee management, inventory tracking, and revenue reports. 
 
-The project will be completed in two sprints:                                                                                                                                          Sprint 1: Build the basic system for customer management, order taking, and payment processing.                                                                                        Sprint 2: Finalize the receipt generation and improve the user interface.
+#Technologies Used
+Programming Language:Java
+GUI Framework: JavaFX
+Database:SQLite 
+IDE: IntelliJ IDEA
 
-
+#Team Members:
+Johnson, Wanjiru, Ingram
