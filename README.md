@@ -11,10 +11,10 @@ Sprint 2:
 Add employee management, inventory tracking, and revenue reports. 
 
 #Technologies Used
-Programming Language:Java
+Programming Language: Java
 GUI Framework: JavaFX
-Database:SQLite 
+Database: SQL
 IDE: IntelliJ IDEA
 
 #Team Members:
-Johnson, Wanjiru, Ingram
+Johnson, Wanjiru, Ingram, Jonpaul
