@@ -1,0 +1,26 @@
+package horizenPizza;
+import java.util.Scanner;
+
+public class CashRegister {
+	public static void processPayment(double total) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.printf("Your total is: $%.2f\n", total);
+
+        // Ask for payment method
+        System.out.print("Paying with cash or card? ");
+        String paymentMethod = scanner.nextLine().trim().toLowerCase();
+
+        if (paymentMethod.equals("cash")) {
+                System.out.println("Payment accepted.");
+                System.out.println("Thank you for your purchase!");
+        } else if (paymentMethod.equals("card")) {
+            System.out.println("Card payment accepted.");
+            System.out.println("Thank you for your purchase!");
+        } else {
+            System.out.println("Invalid payment method. Transaction cancelled.");
+        }
+
+        scanner.close();
+    }
+}
