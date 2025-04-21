@@ -1,0 +1,70 @@
+package horizenPizza;
+
+import java.util.*;
+
+//Works like the Main for CashRegister, MenuItem, and PizzaRestaurantMenu
+
+public class PizzaRestaurant {
+    private List<MenuItem> currentOrder;
+    private double total;
+    public Map<String, List<MenuItem>> menu;
+
+    public PizzaRestaurant() {
+    	PizzaRestaurantMenu menuBuilder = new PizzaRestaurantMenu();
+    	this.menu = PizzaRestaurantMenu.getMenu();
+        this.currentOrder = new ArrayList<>();
+        this.total = 0;
+    }
+
+    public void takeTextOrder() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Pizza Restaurant!");
+        System.out.println("Type an item name to add it to the order. Type 'done' to finish.\n");
+
+        while (true) {
+            System.out.print("Enter item: ");
+            String input = scanner.nextLine().trim().toLowerCase();
+
+            if (input.equalsIgnoreCase("done")) break;
+
+            MenuItem item = findItemByName(input);
+            if (item != null) {
+                currentOrder.add(item);
+                total += item.price;
+                System.out.println("✔️ Added: " + item);
+            } else {
+                System.out.println("❌ Item not found.");
+            }
+        }
+
+        printOrder();
+        CashRegister.processPayment(total);
+    }
+
+    private MenuItem findItemByName(String name) {
+        for (List<MenuItem> items : menu.values()) {
+            for (MenuItem item : items) {
+                if (item.name.equalsIgnoreCase(name)) {
+                    return item;
+                }
+            }
+        }
+        return null;
+    }
+
+    public void printOrder() {
+        System.out.println("\nYour Order:");
+        for (MenuItem item : currentOrder) {
+            System.out.println(" - " + item);
+        }
+        System.out.printf("Total: $%.2f\n", total);
+        System.out.println();
+    }
+
+       
+    public static void main(String[] args) {
+        PizzaRestaurant restaurant = new PizzaRestaurant();
+        restaurant.takeTextOrder();
+    }
+
+}
