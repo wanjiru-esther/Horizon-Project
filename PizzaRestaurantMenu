@@ -1,0 +1,64 @@
+package horizenPizza;
+import horizenPizza.MenuItem;
+import java.util.*;
+
+
+public class PizzaRestaurantMenu {
+
+    private static Map<String, List<MenuItem>> menu = new HashMap<>();
+
+    static {
+        // Initialize menu when the class is loaded
+        menu.put("Pizzas", Arrays.asList(
+            new MenuItem("Cheese Pizza", 9.99),
+            new MenuItem("Margherita Pizza", 9.99),
+            new MenuItem("Pepperoni Pizza", 11.49),
+            new MenuItem("BBQ Chicken Pizza", 12.99),
+            new MenuItem("Hiwaiian Pizza", 9.99),
+            new MenuItem("Veggie Supreme", 10.99)
+        ));
+
+        menu.put("Sides", Arrays.asList(
+            new MenuItem("Garlic Breadsticks", 4.99),
+            new MenuItem("Mozzarella Sticks", 5.49),
+            new MenuItem("Potato Wedges", 4.99),
+            new MenuItem("Potato Chips", 3.49)
+        ));
+
+        menu.put("Drinks", Arrays.asList(
+            new MenuItem("Soda", 1.99),
+            new MenuItem("Lemonade", 2.49),
+            new MenuItem("Sweet Tea", 2.29),
+            new MenuItem("Bottled Water", 1.49)
+        ));
+
+        menu.put("Salads", Arrays.asList(
+            new MenuItem("Caesar Salad", 6.49),
+            new MenuItem("Garden Salad", 5.99),
+            new MenuItem("Greek Salad", 7.25),
+            new MenuItem("Caprese Salad", 6.75)
+        ));
+
+        menu.put("Desserts", Arrays.asList(
+            new MenuItem("Chocolate Lava Cake", 4.99),
+            new MenuItem("Tiramisu", 5.49),
+            new MenuItem("Cinnamon Bites", 3.75),
+            new MenuItem("Ice Cream", 3.25)
+        ));
+    }
+
+    // Public getter for the menu
+    public static Map<String, List<MenuItem>> getMenu() {
+        return menu;
+    }
+
+    // Optional: Keep this for testing
+    public static void main(String[] args) {
+        for (String category : menu.keySet()) {
+            System.out.println("\n" + category + ":");
+            for (MenuItem item : menu.get(category)) {
+                System.out.println("  - " + item);
+            }
+        }
+    }
+}
